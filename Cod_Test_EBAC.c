@@ -126,50 +126,67 @@ int main()
 		// Variáveis
 	int opcao=0;
 	int laco=1;
-		// Declarando operador de repetição
-	for (laco=1;laco=1;)
-	{
-		system("cls"); // Clean para o reset e reiniciar o menu.
-		
-		setlocale(LC_ALL, "Portuguese"); // <-- Responsável por definir qual a região da biblioteca que o computador deve buscar. 
-			//Cabeçalho do Menu - Ínicio Menu
-		printf("\t ### Registro de Alunos EBAC ###\n"); // <-- Lembrar que o "\n" é para quebrar a linha	
-		printf("#### Bem vindo a tela principal colaborador. ####\n\n");
-		printf("\tEscolha uma das opções do menu:\n\n"); // <-- "\t" Ele vai executar um espaço antes da frase
-			//Opções do menu -- Ajustar depois se necessário
-		printf("\t1 - Matrícular Aluno\n");
-		printf("\t2 - Consultar Matrícula\n");
-		printf("\t3 - Cancelamento de Matrícula\n");
-		printf("\t4 - Sair");
-		printf("\nQual a opção que você deseja escolher: ");
-			// Fim Menu
-			//Comandos
-		scanf("%d", &opcao); // Armazanando a opção.
-		system("cls"); // Clean na tela para um novo menu apartir da escolha que o usuário fez.
+		// Tela de Login
+	// Primeira parte recebendo as variáveis
+	char senhadigitada[]="a";	 // Definindo tamanho da senha
+	int comparacao;
+	printf("\t ### Registro de Matriculas EBAC ###\n\n");
+	printf("Login de Administrador\n"); // Para saber de qual senha se trata - Futuramente modificar para receber outras senhas. 
+	printf("Digite sua senha: ");
+	scanf("%s",senhadigitada);
 	
-			//Estruturas condicional
-		switch(opcao)
-		{
-			case 1:
-				matricula();
-				break;
-			case 2:
-				consulta();
-				break;
-			case 3:
-				deletar();
-				break;
-			// SAIR DO SISTEMA
-			case 4:
-				printf("\t ### Obrigado por utilizar o sistema da EBAC! ###\n");
-				return 0;
-				break;
-			default:
-				erro();
-				break;
-		} // Fim das estruturas
+	comparacao = strcmp(senhadigitada, "admin");
+	// Segunda parte validador
+	if(comparacao == 0)
+	{	
+		system("cls"); // Clean para o reset e reiniciar o menu.
+			// Declarando operador de repetição
+		for (laco=1;laco=1;)
+		{			
+			setlocale(LC_ALL, "Portuguese"); // <-- Responsável por definir qual a região da biblioteca que o computador deve buscar. 
+				//Cabeçalho do Menu - Ínicio Menu
+			printf("\t ### Registro de Matrículas EBAC ###\n"); // <-- Lembrar que o "\n" é para quebrar a linha	
+			printf("#### Bem vindo a tela principal colaborador. ####\n\n");
+			printf("\tEscolha uma das opções do menu:\n\n"); // <-- "\t" Ele vai executar um espaço antes da frase
+				//Opções do menu -- Ajustar depois se necessário
+			printf("\t1 - Matrícular\n");
+			printf("\t2 - Consultar Matrícula\n");
+			printf("\t3 - Cancelamento de Matrícula\n");
+			printf("\t4 - Sair\n");
+			printf("\nQual a opção que você deseja escolher: ");
+				// Fim Menu
+				//Comandos
+			scanf("%d", &opcao); // Armazanando a opção.
+			system("cls"); // Clean na tela para um novo menu apartir da escolha que o usuário fez.
+		
+				//Estruturas condicional
+			switch(opcao)
+			{
+				case 1:
+					matricula();
+					break;
+				case 2:
+					consulta();
+					break;
+				case 3:
+					deletar();
+					break;
+				// SAIR DO SISTEMA
+				case 4:
+					printf("\t ### Obrigado por utilizar o sistema da EBAC! ###\n");
+					return 0;
+					break;
+				default:
+					erro();
+					break;
+			} // Fim das estruturas
 			//Créditos //Assinatura // Rodapé
 		printf("\n\n#### Software desvolvido por Guilherme Vargas Ouriques. ####\n\n");
 			//Assinado dessa maneira para identificar o meu nome ao enviar o projeto modificar depois.
+		}
 	}
+	// Caso a senha for inválida
+	else
+		setlocale(LC_ALL, "Portuguese");
+		printf("\t ### Senha inválida! ###\n");
 }
