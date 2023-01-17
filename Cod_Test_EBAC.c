@@ -140,6 +140,7 @@ int main()
 		printf("\t1 - Matrícular Aluno\n");
 		printf("\t2 - Consultar Matrícula\n");
 		printf("\t3 - Cancelamento de Matrícula\n");
+		printf("\t4 - Sair");
 		printf("\nQual a opção que você deseja escolher: ");
 			// Fim Menu
 			//Comandos
@@ -157,6 +158,11 @@ int main()
 				break;
 			case 3:
 				deletar();
+				break;
+			// SAIR DO SISTEMA
+			case 4:
+				printf("\t ### Obrigado por utilizar o sistema da EBAC! ###\n");
+				return 0;
 				break;
 			default:
 				erro();
