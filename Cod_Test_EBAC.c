@@ -113,6 +113,7 @@ int deletar()
 		printf("### NÃO existe matrículas com esse CPF no sistema!. ###\n");
 		system("pause");
 	}
+	fclose(file);
 }
 // ESCOLHA ERRADA
 int erro()
